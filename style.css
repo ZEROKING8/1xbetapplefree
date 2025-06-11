@@ -1,0 +1,177 @@
+body {
+  margin: 0;
+  font-family: 'Share Tech Mono', monospace;
+  background-color: #000;
+  color: #00ff00;
+  text-align: center;
+  direction: rtl;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 255, 0, 0.05),
+    rgba(0, 255, 0, 0.05) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  z-index: -1;
+  animation: hackerEffect 10s linear infinite;
+  opacity: 0.05;
+}
+
+@keyframes hackerEffect {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+.container {
+  padding: 20px;
+}
+
+.logo h1 {
+  font-size: 3em;
+  color: #00ff00;
+}
+
+.logo h2 {
+  color: #0f0;
+  font-size: 18px;
+}
+
+.warning {
+  background: #111;
+  border: 2px dashed #0f0;
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 500px;
+  font-size: 14px;
+}
+
+.circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+  margin: 30px auto;
+  border: 3px solid #00ff00;
+  box-shadow: 0 0 20px #00ff00aa;
+}
+
+.side-timer {
+  margin: 10px auto;
+  font-size: 1.2em;
+  background: #222;
+  padding: 5px 15px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 0 10px #00ff0077;
+}
+
+.buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  background: #00ff00;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buttons button:hover {
+  background: #00cc00;
+}
+
+.popup {
+  background: #111;
+  border: 1px solid #00ff00;
+  padding: 20px;
+  max-width: 300px;
+  margin: 20px auto;
+  border-radius: 10px;
+  display: none;
+}
+
+.popup input {
+  padding: 8px;
+  width: 80%;
+  font-size: 16px;
+}
+
+.notification {
+  margin: 10px;
+  font-size: 16px;
+  color: yellow;
+}
+
+.stats {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+#splash-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tech-text {
+  font-size: 3em;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00ff00, #00cc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px #00ff00;
+  animation: type 1s steps(8), glow 2s infinite alternate;
+}
+
+@keyframes type {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00ff00;
+  }
+  to {
+    text-shadow: 0 0 30px #00ff00, 0 0 60px #00ff00;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

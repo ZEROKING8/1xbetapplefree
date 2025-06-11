@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZERO - توقع الطيارة</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="splash-screen">
+  <div class="tech-text">ZERO</div>
+</div>
+
+<div class="container">
+  <div class="logo">
+    <h1>ZERO</h1>
+    <h2>تطبيق توقع الطيارة</h2>
+  </div>
+
+  <div class="warning">
+    ⚠️ أنت في الوضع التجريبي، لا يتم إعطاؤك توقعات صحيحة. الكود يعمل لمدة نصف ساعة فقط. للشراء، الرجاء التواصل مع ZERO.
+  </div>
+
+  <div class="main-area">
+    <div class="circle" id="prediction">?</div>
+    <div id="timer-box" class="side-timer" style="display:none">
+      ⏱️ <span id="timer">00:00</span>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button onclick="startRound()">بدء جولة جديدة</button>
+    <button onclick="showCodePopup()">إدخال مفتاح التشغيل</button>
+    <button onclick="resetApp()">🔄 إعادة تعيين</button>
+    <button onclick="shareApp()">📤 مشاركة</button>
+  </div>
+
+  <div id="codePopup" class="popup">
+    <h3>أدخل مفتاح التشغيل:</h3>
+    <input id="codeInput" placeholder="أدخل الكود هنا..." />
+    <br /><br />
+    <button onclick="activateCode()">تفعيل</button>
+  </div>
+
+  <div class="notification" id="notification"></div>
+
+  <div class="stats">
+    🔐 أكواد مُستخدمة: <span id="usedCodes">0</span><br />
+    🎯 متوسط التوقع: <span id="avgTime">0.00</span><br />
+    🔥 أقصى توقع: <span id="bestPrediction">0.00</span>
+  </div>
+</div>
+
+<audio id="beep" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"></audio>
+<script src="script.js"></script>
+<script>
+  window.onload = () => {
+    setTimeout(() => {
+      document.getElementById("splash-screen").style.display = "none";
+    }, 2000);
+  };
+</script>
+</body>
+</html>
